@@ -3,68 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zen Rian N. Labrado - Portfolio</title>
+    <title>Portfolio - Your Name</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333333;
+            background-color: #e0e0e0;
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
         }
 
         header {
-            background: #333;
-            color: #fefefe;
-            padding: 20px 0;
+            text-align: center;
+            padding: 50px 0;
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        nav {
+            margin: 20px 0;
             text-align: center;
         }
 
-        main {
-            max-width: 800px;
-            margin: 20px auto;
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .section {
+            background-color: #fff;
             padding: 20px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.33% - 40px);
+            min-width: 280px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
-        h1 {
-            color: #ffffff; /* Unique color for h1 */
+        .section h2 {
+            font-size: 1.5em;
+            color: #4a90e2;
         }
 
-        h2, h3, h4 {
-            color: #333333; /* Different color for h2, h3, h4 */
+        .section p {
+            line-height: 1.6;
         }
 
-        p {
-            margin-bottom: 20px;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fefefe;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Zen Rian N. Labrado</h1>
-        <p>2nd Year Student at University of the Immaculate Conception</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p>Student, Developer, Learner</p>
+        </header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am Zen Rian N. Labrado, a 2nd year student at the University of the Immaculate Conception. I am passionate about learning new things and constantly improving myself.</p>
-        </section>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </nav>
 
-        <section id="favorites">
-            <h3>Favorites</h3>
-            <p>I like to go to the gym, play video games, and read webtoons/manhuas.</p>
-        </section>
+        <div class="content">
+            <section id="about" class="section">
+                <h2>About Me</h2>
+                <p>Hi, I'm [Your Name], a student passionate about technology, coding, and constant self-improvement. I enjoy creating projects that challenge my knowledge and push me to learn new things.</p>
+            </section>
 
-        <section id="projects">
-            <h4>School Projects</h4>
-            <p>No projects yet, but I am looking forward to sharing my work here soon.</p>
-        </section>
-    </main>
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <p>Some of the key skills I've gained over the years include:</p>
+                <ul>
+                    <li>Web Development (HTML, CSS, JavaScript)</li>
+                    <li>Python Programming</li>
+                    <li>Database Management</li>
+                    <li>Problem-solving and Debugging</li>
+                </ul>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>Projects</h2>
+                <p>I am constantly working on various projects, whether for school or personal interest. Some of my recent projects include:</p>
+                <ul>
+                    <li>Personal Portfolio Website</li>
+                    <li>To-Do List Application</li>
+                    <li>Weather App using OpenWeather API</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Your Name | All Rights Reserved</p>
+    </footer>
 
 </body>
 </html>
