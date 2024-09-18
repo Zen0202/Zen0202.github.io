@@ -1,14 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
-        img {
-            width: 100%;
-        }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -30,7 +26,19 @@
             color: #1a73e8;
         }
 
-        header h1 {
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-content img {
+            width: 80px; /* Adjust size as needed */
+            height: 80px; /* Adjust size as needed */
+            margin-right: 20px; /* Space between image and text */
+        }
+
+        .header-content h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
         }
@@ -66,9 +74,37 @@
             color: #b0b0b0;
         }
 
+        /* Remove padding and background from buttons container */
+        .buttons-container {
+            max-width: 1200px;
+            margin: 20px auto 0 auto; /* Align with the sections */
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .buttons-container a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons-container a:hover {
+            background-color: #0056b3;
+        }
+
         @media (max-width: 768px) {
             .section {
                 flex: 1 1 100%;
+            }
+
+            .buttons-container {
+                flex-direction: column;
+                max-width: 100%;
             }
         }
     </style>
@@ -76,13 +112,14 @@
 <body>
 
     <div class="container">
-
         <header>
-            <img src="me.jpg" 
-            style="width:128px;height:128px;">
-
-            <h1>Zen Rian N. Labrado</h1>
-            <p>Student, Learner</p>
+            <div class="header-content">
+                <img src="C:/Users/ZEN-RIAN/Downloads/Zen.jpg" alt="Zen Rian N. Labrado">
+                <div>
+                    <h1>Zen Rian N. Labrado</h1>
+                    <p>Student, Learner</p>
+                </div>
+            </div>
         </header>
 
         <div class="content">
@@ -106,6 +143,12 @@
                     <li>No projects yet, but I am looking forward to sharing my work here soon.</li>
                 </ul>
             </section>
+        </div>
+
+        <!-- Buttons Section aligned without padding -->
+        <div class="buttons-container">
+            <a href="fashion-blog.html" id="fashion-blog-button">Fashion Blog</a>
+            <a href="healthy-recipes.html" id="healthy-recipe-button">Healthy Recipe</a>
         </div>
     </div>
 
