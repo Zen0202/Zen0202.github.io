@@ -1,35 +1,37 @@
-/* Step 1: Resize the image */
-img {
-    height: 150px; /* Adjust this value to experiment */
+.navbar {
+    display: flex;
+    background-color: transparent;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+  
+  img {
+    height: 150px;
   }
   
-  /* Step 2: Increase the font size of the description */
   .description {
     font-size: 20px;
   }
   
-  /* Step 3: Bold the cooking time */
   #cook-time {
     font-weight: bold;
   }
   
-  /* Step 4: Change the list style to squares in the ingredients list */
   .ingredients li {
     list-style: square;
   }
   
-  /* Step 5: Make the preparation time text gray */
   p.time {
     color: gray;
   }
   
-  /* Step 6: Change the color of external links */
   .external-link {
-    color: SeaGreen;
+    color: seagreen;
   }
   
-  /* Step 7: Change the font-family for h1, h2, p, and li */
   h1, h2, p, li {
-    font-family: Helvetica;
+    font-family: Arial, Helvetica, sans-serif;
   }
-  
