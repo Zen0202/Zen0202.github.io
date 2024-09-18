@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday with Isa</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark theme background */
+            color: #1a73e8; /* Text color */
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+        }
+
+        header {
+            text-align: left;
+            padding: 50px 0;
+            background-color: #121212; /* Same as body background */
+            color: #1a73e8;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .header-content img {
+            width: 150px; /* Profile picture size */
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 15px; /* Space between image and text */
+        }
+
+        .header-content h3 {
+            font-size: 1.2em;
+            color: #b0b0b0; /* Lighter text color */
+            margin: 0; /* Remove margin for alignment */
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        h1, h2, h4 {
+            color: #1a73e8;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #b0b0b0;
+        }
+
+        .content img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #1e1e1e;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+            color: #1a73e8;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #contact {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            color: #b0b0b0;
+        }
+
+        #contact p {
+            margin: 0;
+        }
+
+        #contact strong {
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <header>
+            <div class="header-content">
+                <a href="#contact">
+                    <img src="https://raw.githubusercontent.com/cbatuic/fashion-blog/main/profile.jpg" alt="Isabelle Rodriguez Profile Picture">
+                </a>
+                <h3>by Isabelle Rodriguez | 1 day ago</h3>
+            </div>
+        </header>
+
+        <!-- Blog Content -->
+        <div class="content">
+            <!-- Blog Title -->
+            <h1>An Insider’s Guide to NYFW</h1>
+            <img src="https://raw.githubusercontent.com/cbatuic/fashion-blog/main/image-one.jpeg" alt="NYFW Image">
+            <p>NYFW can be both amazingly fun & incredibly overwhelming. Especially if you’ve never been. Luckily, I’m here to give you an insider’s guide and make your first show a pleasurable experience. By taking my tips and tricks, and following your gut, you’ll have an unforgettable experience! <a href="https://en.wikipedia.org/wiki/New_York_Fashion_Week" target="_blank">NYFW</a>.</p>
+
+            <!-- Section 1: Getting Tickets & Picking the Shows -->
+            <h2>Getting Tickets & Picking the Shows</h2>
+            <img src="https://raw.githubusercontent.com/cbatuic/fashion-blog/main/image-two.jpeg" alt="Tickets Image">
+            <p>If you’re lucky or connected, you can get an invite sans the price tag. But I wasn’t so lucky or connected my first 2 years, so I’m here to help you out. First, plan out which shows are the most important to you and make a schedule. And this is a biggie: SET A BUDGET. If you’re worrying about blowing your cash the whole time, you won’t have fun. Then check out prices, days, and times, and prioritize the designers you want to see most. Lastly, purchase your tickets and get excited!</p>
+
+            <!-- Section 2: Dressing for the Shows -->
+            <h2>Dressing for the Shows</h2>
+            <img src="https://raw.githubusercontent.com/cbatuic/fashion-blog/main/image-three.jpeg" alt="Dressing for the Shows Image">
+            <p>Always be true to your own sense of style. If you don’t, you’ll be uncomfortable the whole time and it will show. Remember, NYFW is about expressing yourself and taking in what the designers have chosen to express through their new lines. Also, it’s important to wear shoes you’ll be comfortable in all day. Obviously, you want to look good, but you’ll be on your feet all day long, so be prepared.</p>
+
+            <!-- Related Content -->
+            <h4>Related Content</h4>
+            <ul>
+                <li>How To Style Boyfriend Jeans</li>
+                <li>When Print Is Too Much</li>
+                <li>The Overalls Trend</li>
+                <li>Fall’s It Color: Blush</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact">
+            <p><strong>Email:</strong> isa@fashionblog.com | <strong>Phone:</strong> 917-555-1098 | <strong>Address:</strong> 371 284th St., New York, NY, 10001</p>
+        </div>
+    </div>
+
+</body>
+</html>
