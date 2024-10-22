@@ -5,38 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
+        :root {
+            --bg-color: #121212;
+            --text-color: #1a73e8;
+            --section-bg-color: #1e1e1e;
+            --button-bg-color: #1a73e8;
+            --button-hover-bg-color: #0056b3;
+        }
+
+        /* Light mode theme */
+        .light-mode {
+            --bg-color: #f0f0f0;
+            --text-color: #000000;
+            --section-bg-color: #ffffff;
+            --button-bg-color: #0000ff;
+            --button-hover-bg-color: #3333ff;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #1a73e8;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
 
         .container {
             width: 100%;
             padding: 20px;
-            background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+            background: linear-gradient(135deg, var(--section-bg-color), var(--section-bg-color));
         }
 
         header {
             padding: 50px 0;
-            background-color: #121212;
-            color: #1a73e8;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
 
         .header-content {
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Changed from center to flex-start */
-            margin-left: 20px; /* Added margin for better positioning */
+            justify-content: flex-start;
+            margin-left: 20px;
         }
 
         .header-content img {
             width: 80px;
             height: 80px;
             margin-right: 20px;
-            border-radius: 50%; /* Optional: makes the image circular */
+            border-radius: 50%;
         }
 
         .header-content h1 {
@@ -48,6 +65,23 @@
             font-size: 1.2em;
         }
 
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: var(--button-bg-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--button-hover-bg-color);
+        }
+
         .content {
             max-width: 1200px;
             margin: 0 auto;
@@ -57,7 +91,7 @@
         }
 
         .section {
-            background-color: #1e1e1e;
+            background-color: var(--section-bg-color);
             padding: 20px;
             flex: 1 1 calc(33.33% - 40px);
             min-width: 280px;
@@ -67,7 +101,7 @@
 
         .section h2 {
             font-size: 1.5em;
-            color: #1a73e8;
+            color: var(--text-color);
         }
 
         .section p, .section ul {
@@ -87,14 +121,14 @@
             text-decoration: none;
             color: white;
             padding: 10px 20px;
-            background-color: #1a73e8;
+            background-color: var(--button-bg-color);
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             transition: background-color 0.3s ease;
         }
 
         .buttons-container a:hover {
-            background-color: #0056b3;
+            background-color: var(--button-hover-bg-color);
         }
 
         @media (max-width: 768px) {
@@ -109,9 +143,12 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
 
     <div class="container">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle" id="theme-toggle">Light Mode</button>
+
         <header>
             <div class="header-content">
                 <img src="https://Zen0202.github.io/Sleepyboii.png" alt="Zen Rian N. Labrado">
@@ -146,8 +183,8 @@
 
             <section id="contacts" class="section">
                 <h2>Contacts</h2>
-                <p>Email: <a href="mailto:labradozen@gmail.com" style="color: #1a73e8;">labradozen@gmail.com</a></p>
-                <p>Phone: <a href="tel:+639958742185" style="color: #1a73e8;">+639958742185</a></p>
+                <p>Email: <a href="mailto:labradozen@gmail.com" style="color: var(--text-color);">labradozen@gmail.com</a></p>
+                <p>Phone: <a href="tel:+639958742185" style="color: var(--text-color);">+639958742185</a></p>
             </section>
 
         </div>
@@ -157,6 +194,30 @@
             <a href="healthy-recipes.html" id="healthy-recipe-button">Healthy Recipe</a>
         </div>
     </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check localStorage for theme preference
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.textContent = 'Dark Mode';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            // Toggle between light and dark modes
+            if (body.classList.contains('light-mode')) {
+                themeToggle.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light'); // Save preference to localStorage
+            } else {
+                themeToggle.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark'); // Save preference to localStorage
+            }
+        });
+    </script>
 
 </body>
 </html>
