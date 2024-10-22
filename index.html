@@ -131,14 +131,75 @@
             background-color: var(--button-hover-bg-color);
         }
 
+        /* Media query for smaller screens */
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column; 
+                align-items: flex-start; 
+            }
+
+            .header-content img {
+                width: 60px;  
+                height: 60px; 
+                margin-right: 0; 
+                margin-bottom: 10px; 
+            }
+
+            .header-content h1 {
+                font-size: 1.8em; 
+            }
+
+            header p {
+                font-size: 1em; 
+            }
+
+            .theme-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px; 
+            }
+
+            .content {
+                flex-direction: column; 
+                gap: 10px; 
+            }
+
             .section {
-                flex: 1 1 100%;
+                flex: 1 1 100%; 
             }
 
             .buttons-container {
                 flex-direction: column;
-                max-width: 100%;
+                align-items: flex-start; 
+                gap: 10px; 
+            }
+
+            .buttons-container a {
+                padding: 8px 15px; 
+            }
+        }
+
+        
+        @media (max-width: 480px) {
+            .header-content img {
+                width: 50px;  
+                height: 50px;
+            }
+
+            .header-content h1 {
+                font-size: 1.5em; 
+            }
+
+            header p {
+                font-size: 0.9em; 
+            }
+
+            .theme-toggle {
+                padding: 6px 12px; 
+            }
+
+            .buttons-container a {
+                padding: 6px 12px; 
             }
         }
     </style>
@@ -170,7 +231,6 @@
                 <ul>
                     <li>Communication</li>
                     <li>Teamwork</li>
-                    <li>Attention to Detail</li>
                 </ul>
             </section>
 
@@ -199,7 +259,7 @@
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
-        // Check localStorage for theme preference
+        
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-mode');
             themeToggle.textContent = 'Dark Mode';
@@ -211,10 +271,10 @@
             // Toggle between light and dark modes
             if (body.classList.contains('light-mode')) {
                 themeToggle.textContent = 'Dark Mode';
-                localStorage.setItem('theme', 'light'); // Save preference to localStorage
+                localStorage.setItem('theme', 'light'); 
             } else {
                 themeToggle.textContent = 'Light Mode';
-                localStorage.setItem('theme', 'dark'); // Save preference to localStorage
+                localStorage.setItem('theme', 'dark');
             }
         });
     </script>
