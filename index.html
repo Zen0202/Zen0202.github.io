@@ -13,7 +13,7 @@
             --button-hover-bg-color: #0056b3;
         }
 
-        /* Light mode theme */
+        
         .light-mode {
             --bg-color: #f0f0f0;
             --text-color: #000000;
@@ -42,8 +42,8 @@
             color: var(--text-color);
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* Align profile image and name to the left */
-            position: relative; /* To position the button within the header */
+            justify-content: flex-start; 
+            position: relative; 
         }
 
         .header-content {
@@ -75,9 +75,9 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            position: absolute; /* Position the button absolutely */
-            top: 20px; /* Align to the top of the header */
-            right: 20px; /* Align to the right edge */
+            position: absolute; 
+            top: 20px; 
+            right: 20px; 
         }
 
         .theme-toggle:hover {
@@ -133,15 +133,15 @@
             background-color: var(--button-hover-bg-color);
         }
 
-        /* Media query for smaller screens */
+        
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column; /* Stack profile image and name vertically */
+                flex-direction: column; 
                 align-items: flex-start;
             }
 
             .header-content img {
-                width: 60px;  /* Smaller profile picture */
+                width: 60px;  
                 height: 60px; 
                 margin-right: 0;
                 margin-bottom: 10px;
@@ -156,13 +156,13 @@
             }
 
             .theme-toggle {
-                padding: 8px 15px; /* Smaller button padding */
-                top: 10px; /* Adjust button position for smaller screens */
+                padding: 8px 15px; 
+                top: 10px; 
                 right: 10px;
             }
 
             .content {
-                flex-direction: column; /* Stack sections vertically */
+                flex-direction: column; 
                 gap: 10px;
             }
 
@@ -181,7 +181,7 @@
             }
         }
 
-        /* Media query for very small screens (mobile) */
+        
         @media (max-width: 480px) {
             .header-content img {
                 width: 50px;
@@ -198,7 +198,7 @@
 
             .theme-toggle {
                 padding: 6px 12px;
-                top: 8px; /* Adjust button position for very small screens */
+                top: 8px; 
                 right: 8px;
             }
 
@@ -263,7 +263,7 @@
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
-        // Check localStorage for theme preference
+        
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-mode');
             themeToggle.textContent = 'Dark Mode';
@@ -272,13 +272,12 @@
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('light-mode');
             
-            // Toggle between light and dark modes
             if (body.classList.contains('light-mode')) {
                 themeToggle.textContent = 'Dark Mode';
-                localStorage.setItem('theme', 'light'); // Save preference to localStorage
+                localStorage.setItem('theme', 'light'); 
             } else {
                 themeToggle.textContent = 'Light Mode';
-                localStorage.setItem('theme', 'dark'); // Save preference to localStorage
+                localStorage.setItem('theme', 'dark'); 
             }
         });
     </script>
