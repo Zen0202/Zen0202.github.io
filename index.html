@@ -37,16 +37,18 @@
         }
 
         header {
-            padding: 50px 0;
+            padding: 50px 20px;
             background-color: var(--bg-color);
             color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align profile image and name to the left */
+            position: relative; /* To position the button within the header */
         }
 
         .header-content {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            margin-left: 20px;
         }
 
         .header-content img {
@@ -66,9 +68,6 @@
         }
 
         .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
             padding: 10px 20px;
             background-color: var(--button-bg-color);
             color: #ffffff;
@@ -76,6 +75,9 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            position: absolute; /* Position the button absolutely */
+            top: 20px; /* Align to the top of the header */
+            right: 20px; /* Align to the right edge */
         }
 
         .theme-toggle:hover {
@@ -134,72 +136,74 @@
         /* Media query for smaller screens */
         @media (max-width: 768px) {
             .header-content {
-                flex-direction: column; 
-                align-items: flex-start; 
+                flex-direction: column; /* Stack profile image and name vertically */
+                align-items: flex-start;
             }
 
             .header-content img {
-                width: 60px;  
+                width: 60px;  /* Smaller profile picture */
                 height: 60px; 
-                margin-right: 0; 
-                margin-bottom: 10px; 
+                margin-right: 0;
+                margin-bottom: 10px;
             }
 
             .header-content h1 {
-                font-size: 1.8em; 
+                font-size: 1.8em;
             }
 
             header p {
-                font-size: 1em; 
+                font-size: 1em;
             }
 
             .theme-toggle {
-                top: 10px;
+                padding: 8px 15px; /* Smaller button padding */
+                top: 10px; /* Adjust button position for smaller screens */
                 right: 10px;
-                padding: 8px 15px; 
             }
 
             .content {
-                flex-direction: column; 
-                gap: 10px; 
+                flex-direction: column; /* Stack sections vertically */
+                gap: 10px;
             }
 
             .section {
-                flex: 1 1 100%; 
+                flex: 1 1 100%;
             }
 
             .buttons-container {
                 flex-direction: column;
-                align-items: flex-start; 
-                gap: 10px; 
+                align-items: flex-start;
+                gap: 10px;
             }
 
             .buttons-container a {
-                padding: 8px 15px; 
+                padding: 8px 15px;
             }
         }
 
-        
+        /* Media query for very small screens (mobile) */
         @media (max-width: 480px) {
             .header-content img {
-                width: 50px;  
+                width: 50px;
                 height: 50px;
             }
 
             .header-content h1 {
-                font-size: 1.5em; 
+                font-size: 1.5em;
             }
 
             header p {
-                font-size: 0.9em; 
+                font-size: 0.9em;
             }
 
             .theme-toggle {
-                padding: 6px 12px; 
+                padding: 6px 12px;
+                top: 8px; /* Adjust button position for very small screens */
+                right: 8px;
             }
 
             .buttons-container a {
-                padding: 6px 12px; 
+                padding: 6px 12px;
             }
         }
     </style>
@@ -207,9 +211,6 @@
 <body class="dark-mode">
 
     <div class="container">
-        <!-- Theme Toggle Button -->
-        <button class="theme-toggle" id="theme-toggle">Light Mode</button>
-
         <header>
             <div class="header-content">
                 <img src="https://Zen0202.github.io/Sleepyboii.png" alt="Zen Rian N. Labrado">
@@ -218,6 +219,8 @@
                     <p>Student, Learner</p>
                 </div>
             </div>
+            <!-- Theme Toggle Button aligned to the top-right corner -->
+            <button class="theme-toggle" id="theme-toggle">Light Mode</button>
         </header>
 
         <div class="content">
@@ -231,6 +234,7 @@
                 <ul>
                     <li>Communication</li>
                     <li>Teamwork</li>
+                    <li>Attention to Detail</li>
                 </ul>
             </section>
 
@@ -259,7 +263,7 @@
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
-        
+        // Check localStorage for theme preference
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-mode');
             themeToggle.textContent = 'Dark Mode';
@@ -271,13 +275,12 @@
             // Toggle between light and dark modes
             if (body.classList.contains('light-mode')) {
                 themeToggle.textContent = 'Dark Mode';
-                localStorage.setItem('theme', 'light'); 
+                localStorage.setItem('theme', 'light'); // Save preference to localStorage
             } else {
                 themeToggle.textContent = 'Light Mode';
-                localStorage.setItem('theme', 'dark');
+                localStorage.setItem('theme', 'dark'); // Save preference to localStorage
             }
         });
     </script>
-
 </body>
 </html>
